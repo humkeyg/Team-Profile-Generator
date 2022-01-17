@@ -2,7 +2,7 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 
-const generateHTMLString = require("./src/generateTeam");
+const generateHTML = require("./src/generateTeam");
 const fs = require("fs");
 const inquirer = require("inquirer");
 const path = require("path");
@@ -117,7 +117,9 @@ const internQuestions = [
 ];
 
 function addNewEmployee(team) {
+
   if (team === "Add Engineer") {
+
     inquirer.prompt(engineerQuestions).then((answers) => {
       console.log(answers);
 
@@ -134,7 +136,9 @@ function addNewEmployee(team) {
     });
 
   } else if (team === "Add Intern") {
+
     inquirer.prompt(internQuestions).then((answers) => {
+
       console.log(answers);
 
       const intern = new Intern(
@@ -151,13 +155,15 @@ function addNewEmployee(team) {
 
   } else {
     console.log("Team profile successfully created");
-    let teamString = generateHTMLString(teamMembers);
+    let teamString = generateHTML(teamMembers);
     writeFile(teamString);
   }
 }
 
 function init() {
+
   inquirer.prompt(managerQuestions).then((answers) => {
+    
     console.log(answers);
 
     const manager = new Manager(
