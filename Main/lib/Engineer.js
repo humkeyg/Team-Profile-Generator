@@ -1,5 +1,16 @@
-class Letter {
-  
-}
+const Employee = require('./Employee');
 
-module.exports = Letter;
+class Engineer extends Employee {
+  constructor(github) {
+    super(name, id, email);
+    this.github = github;
+  }
+
+  getGithub() {
+
+  }
+
+  getRole() {
+    
+  }
+}

@@ -1,7 +1,16 @@
-const Letter = require("./Letter");
+const Employee = require('./Employee');
 
-class Word {
-  
+class Intern extends Employee {
+  constructor(school) {
+    super(name, id, email);
+    this.school = school;
+  }
+
+  getSchool() {
+
+  }
+
+  getRole() {
+    
+  }
 }
-
-module.exports = Word;
