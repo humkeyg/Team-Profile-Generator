@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.1",
+    "express": "^4.17.2",
     "inquirer": "^6.2.1"
   },
   "devDependencies": {
