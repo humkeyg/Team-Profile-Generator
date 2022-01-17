@@ -15,19 +15,25 @@ function generateHTML(teamMembers) {
           thirdPTag = `<p class="card-text">${teamMember.getSchool()}</p>`
       };
       
-      let positionCard = `<div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Name: ${teamMember.getName()}</h5>
-            <h5 class="card-title">Role: ${teamMember.getRole()}</h5>
-            <p class="card-text">ID: ${teamMember.getId()}</p>
-            <p class="card-text">Email: <a href= "mailto:${teamMember.getEmail()}">${teamMember.getEmail()}</a></p>
+      let positionCard = `
+      <div class = "col">
+        <div class = "card" style = "width: 18rem;">
+          <div class = "card-header"> 
+            ${teamMember.getName()}
+          </div>
+          <div class = "card-body">
+            <h5 class = "card-title">${teamMember.getRole()}</h5>
+            <p class = "card-text">ID: ${teamMember.getId()}</p>
+            <p class = "card-text">Email: <a href = "mailto:${teamMember.getEmail()}">${teamMember.getEmail()}</a></p>
             ${thirdPTag}
           </div>
-        </div>`
+        </div>
+      </div>`
 
-        allCards=allCards+positionCard
+        allCards = allCards + positionCard
   }
-  const indexHtml = `<!DOCTYPE html>
+  const indexHtml = `
+    <!DOCTYPE html>
     <html lang="en">
     <head>
       <meta charset="UTF-8">
@@ -35,12 +41,16 @@ function generateHTML(teamMembers) {
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link rel="stylesheet" href="./style.css">
-      <title>Team Members</title>
+      <title>Team Profile Generator</title>
     </head>
     <body>
       
-    <h1 id="project-team">PROJECT TEAM</h1>
-      ${allCards}
+    <h1 class = "title" >Team Members</h1>
+      <div class = "container-fluid">
+        <div class = "row">
+          ${allCards}
+        </div>
+      </div>
 
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
